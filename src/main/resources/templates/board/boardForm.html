@@ -7,6 +7,8 @@
 
     <script th:inline="javascript">
         $(document).ready(function(){
+
+
             var errorMessage = [[${errorMessage}]];
             if(errorMessage != null){
                 alert(errorMessage);
@@ -18,7 +20,7 @@
 
         function bindDomEvent(){
             $(".custom-file-input").on("change", function() {
-                var fileName = $(this).val().split("\\").pop();  //이미지 파일명
+                var fileName = $(this).val().split("/").pop();  //이미지 파일명
                 var fileExt = fileName.substring(fileName.lastIndexOf(".")+1); // 확장자 추출
                 fileExt = fileExt.toLowerCase(); //소문자 변환
 
