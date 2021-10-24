@@ -12,3 +12,6 @@
 * JDK 11
 * MariaDB
 * Gradle
+
+# ERD 설계
+<img src="/Users/jun/Desktop/daeuntube.svg">
