@@ -4,11 +4,8 @@
 * 어떠한 웹이던지 게시판은 필수요소
 
 ## 개발환경
-| Front-End
 * Tymeleaf
 * Bootstrap
-
-| Back-End
 * Spring-Boot 2.5.5
 * Spring Data JPA
 * QueryDSL
