@@ -1,9 +1,11 @@
 package com.daeuntube.controller;
 
 
+import com.daeuntube.config.SessionConstants;
 import com.daeuntube.dto.BoardFormDTO;
 import com.daeuntube.dto.BoardSearchDTO;
 import com.daeuntube.entity.Board;
+import com.daeuntube.entity.Member;
 import com.daeuntube.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -12,10 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -31,8 +30,9 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping(value = "/board/new")
-    public String itemForm(Model model){
+    public String itemForm(Model model, @SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
         model.addAttribute("boardFormDTO", new BoardFormDTO());
+        model.addAttribute("member", loginMember);
         return "board/boardForm";
     }
 
@@ -60,11 +60,12 @@ public class BoardController {
     }
 
     @GetMapping(value = "/board/update/{boardId}")
-    public String itemDtl(@PathVariable("boardId") Long boardId, Model model){
+    public String itemDtl(@PathVariable("boardId") Long boardId, Model model,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
 
         try {
             BoardFormDTO boardFormDTO = boardService.getItemDtl(boardId);
             model.addAttribute("boardFormDTO", boardFormDTO);
+            model.addAttribute("member", loginMember);
         } catch(EntityNotFoundException e){
             model.addAttribute("errorMessage", "존재하지 않는 상품 입니다.");
             model.addAttribute("boardFormDTO", new BoardFormDTO());
@@ -97,7 +98,9 @@ public class BoardController {
     }
 
     @GetMapping(value = {"/board/list", "/board/list/{page}"})
-    public String itemManage(BoardSearchDTO boardSearchDTO, @PathVariable("page") Optional<Integer> page, Model model){
+    public String itemManage(BoardSearchDTO boardSearchDTO,
+                             @PathVariable("page") Optional<Integer> page,
+                             Model model,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
 
         Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 10);
         Page<Board> items = boardService.getBoardListPage(boardSearchDTO, pageable);
@@ -105,14 +108,16 @@ public class BoardController {
         model.addAttribute("items", items);
         model.addAttribute("itemSearchDto", boardSearchDTO);
         model.addAttribute("maxPage", 10);
+        model.addAttribute("member", loginMember);
 
         return "board/boardList";
     }
 
     @GetMapping(value = "/board/detail/{boardId}")
-    public String itemDtl(Model model, @PathVariable("boardId") Long boardId){
+    public String itemDtl(Model model, @PathVariable("boardId") Long boardId,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
         BoardFormDTO boardFormDTO = boardService.getItemDtl(boardId);
         model.addAttribute("item", boardFormDTO);
+        model.addAttribute("member", loginMember);
         return "board/boardDetail";
     }
 

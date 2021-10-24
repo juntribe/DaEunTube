@@ -7,8 +7,8 @@
 
     <script th:inline="javascript">
 
-
         $(document).ready(function () {
+
             var modal = $('.modal');
             var id = [[${item.id}]];
 
@@ -37,13 +37,14 @@
 
                     $.each(arr, function (idx, reply) {
                         console.log(reply);
+
                         str += '    <div class="d-flex mb-4" data-rno="' + reply.rno + '">';
                         str += '   <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>';
-                        str += '    <div class="ms-3"><div class="delete_test"></div>';
-                        str += '    <div class="fw-bold">' + reply.replyer +'</button></div>';
+                        str += '    <div class="ms-3">';
+                        str += '    <div class="fw-bold">' + reply.replyer +'</div>';
                         str += '   <p>'+  reply.text + '</p></div>';
-
                         str += '    </div>';
+
                     })
 
                     listGroup.html(str);
@@ -83,6 +84,7 @@
                         alert(newRno + "번 댓글이 등록되었습니다.")
                         $('.text_mode').val('');
                         $('.replyTest').val('');
+                        $(".replySave").hide(); //모달 내의 모든 버튼을 안 보이도록
                         loadJSONData();
                     }
                 })
@@ -102,6 +104,7 @@
                 modal.modal('show');
 
             });
+
 
             $(".replyRemove").on("click", function () {
 
@@ -123,7 +126,9 @@
             });
 
 
+
         });
+
 
     </script>
 
@@ -145,11 +150,10 @@
                         <!-- Post categories-->
                     </header>
                     <!-- Preview image figure-->
-<!--                    <div th:if="${item.boardFileDTOList[0].imgUrl} =='*.jpg'">-->
-<!--                    <figure class="mb-4"> <img th:src="${item.boardFileDTOList[0].imgUrl}"/></figure>-->
-<!--                    </div>-->
-                    <figure class="mb-4"> <video controls th:src="${item.boardFileDTOList[1].imgUrl}" width="900px" height="500px"/></figure>
+                    <th:block th:if="${item.boardFileDTOList[1].imgUrl != '' }">
 
+                    <figure class="mb-4"> <video controls autoplay muted th:src="${item.boardFileDTOList[1].imgUrl}" width="900px" height="500px"/></figure>
+                    </th:block>
                     <!-- Post content-->
                     <section class="mb-5">
                         <p class="fs-5 mb-4">[[${item.content}]] </p>
@@ -185,7 +189,7 @@
                                 <input type="hidden" name="rno">
                                 <textarea class="form-control text_mode" name="replyText" rows="3" placeholder="Join the discussion and leave a comment!"></textarea><button type="button" class="btn btn-primary replySave">Save</button></form>
                             <!-- Comment with nested comments-->
-                            <div class="list-group replyList">
+                            <div class="replyList">
 
                             </div>
                         </div>
