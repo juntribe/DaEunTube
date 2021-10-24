@@ -14,4 +14,4 @@
 * Gradle
 
 # ERD 설계
-<img src="https://user-images.githubusercontent.com/63856867/138617284-2403373c-76c4-4ce0-bd80-dbd28d6749ff.png" width="700>
+<img src="https://user-images.githubusercontent.com/63856867/138617284-2403373c-76c4-4ce0-bd80-dbd28d6749ff.png" width="700">
