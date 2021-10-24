@@ -10,6 +10,8 @@
 
 | Back-End
 * Spring-Boot 2.5.5
+* Spring Data JPA
+* QueryDSL
 * JDK 11
 * MariaDB
 * Gradle
