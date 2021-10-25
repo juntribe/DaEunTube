@@ -11,6 +11,19 @@
     </style>
 </th:block>
 
+<th:block layout:fragment="script">
+
+    <script th:inline="javascript">
+        $(document).ready(function(){
+            var errorMessage = [[${errorMessage}]];
+            if(errorMessage != null){
+                alert(errorMessage);
+            }
+        });
+    </script>
+
+</th:block>
+
 
 
 <div layout:fragment="content">
