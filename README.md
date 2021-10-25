@@ -31,10 +31,11 @@
  <hr/>
  
  ## 회원가입 & 로그인
-<img src="https://user-images.githubusercontent.com/63856867/138637904-8a9a975b-174e-4816-b08f-4bacc3c5a54d.gif" width="900">
 
+<img src="https://user-images.githubusercontent.com/63856867/138638206-17ca261e-a310-4eff-aa04-b60d35266b81.gif" width="900">
 
  [코드 바로가기](https://github.com/juntribe/DaEunTube/blob/a533eb605b86aa400a0ebc705180c43053109418/src/main/java/com/daeuntube/controller/MemberController.java#L41)
+<img src="https://user-images.githubusercontent.com/63856867/138637904-8a9a975b-174e-4816-b08f-4bacc3c5a54d.gif" width="900">
 
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/63856867/138637875-59e64f1c-98b7-4692-9e6f-7a8d9ca2c8c1.gif)
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/63856867/138637894-84dffe0a-ba16-4d74-bc18-47411c225500.gif)
