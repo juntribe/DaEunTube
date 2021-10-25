@@ -13,5 +13,20 @@
 * MariaDB
 * Gradle
 
+# 제작 기간
+2021.10.11 ~10.24
+
 # ERD 설계
 <img src="https://user-images.githubusercontent.com/63856867/138617284-2403373c-76c4-4ce0-bd80-dbd28d6749ff.png" width="700">
+
+<details>
+<summary>접기/펼치기 버튼</summary>
+<div markdown="1">
+
+|제목|내용|
+|--|--|
+|1|1|
+|2|10|
+
+</div>
+</details>
