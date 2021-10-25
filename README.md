@@ -1,6 +1,6 @@
  # 다은 튜브(DaEunTube) - 개인 프로젝트
  ## 목적
-* 딸  연습용으로 제작
+* 딸 영상편집 연습용으로 제작
 * 어떠한 웹이던지 게시판은 필수요소
 
 ## 개발환경
@@ -27,7 +27,7 @@
 
 <img src="https://user-images.githubusercontent.com/63856867/138623531-f270921e-8a13-4d8d-9b3a-a5bbec9e6d81.gif" width="700">
  
- dd
+ 
  
 <img src="https://user-images.githubusercontent.com/63856867/138623542-426ac027-6064-4d66-a5f6-806f11db1a21.gif" width="700">
 
