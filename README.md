@@ -25,8 +25,8 @@
 <summary>설명 펼치기</summary>
 <div markdown="1">
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/63856867/138623531-f270921e-8a13-4d8d-9b3a-a5bbec9e6d81.gif)
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/63856867/138623542-426ac027-6064-4d66-a5f6-806f11db1a21.gif)
+<imt src="https://user-images.githubusercontent.com/63856867/138623531-f270921e-8a13-4d8d-9b3a-a5bbec9e6d81.gif" width="700">
+<img src="https://user-images.githubusercontent.com/63856867/138623542-426ac027-6064-4d66-a5f6-806f11db1a21.gif" width="700">
 
 
 </div>
