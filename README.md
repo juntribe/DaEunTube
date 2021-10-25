@@ -21,9 +21,9 @@
 
 # 주요 기능
 
-<details>
+<!-- <details>
 <summary>설명 펼치기</summary>
-<div markdown="1">
+<div markdown="1"> -->
 
  ## 실행화면
 <img src="https://user-images.githubusercontent.com/63856867/138623531-f270921e-8a13-4d8d-9b3a-a5bbec9e6d81.gif" width="900">
@@ -64,7 +64,8 @@
  Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/e65ecd145b17026069ea4241f4203ea1b14641c1/src/main/java/com/daeuntube/service/ReplyServiceImpl.java#L22)
 
 
-</div>
+<!-- </div>
 
  
 </details>
+ -->
