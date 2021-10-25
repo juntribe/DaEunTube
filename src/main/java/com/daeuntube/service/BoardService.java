@@ -5,7 +5,7 @@ package com.daeuntube.service;
 import com.daeuntube.dto.BoardFileDTO;
 import com.daeuntube.dto.BoardFormDTO;
 import com.daeuntube.dto.BoardSearchDTO;
-import com.daeuntube.dto.MainItemDTO;
+import com.daeuntube.dto.MainImageDTO;
 import com.daeuntube.entity.Board;
 import com.daeuntube.entity.BoardFile;
 import com.daeuntube.repository.BoardFileRepository;
@@ -54,7 +54,7 @@ public class BoardService {
     }
 
     @Transactional(readOnly = true)
-    public BoardFormDTO getItemDtl(Long boardId){
+    public BoardFormDTO getImageDtl(Long boardId){
         List<BoardFile> boardFileList = boardFileRepository.findByBoardIdOrderByIdAsc(boardId);
         List<BoardFileDTO> boardFileDTOList = new ArrayList<>();
         for (BoardFile boardFile : boardFileList) {
@@ -90,7 +90,7 @@ public class BoardService {
     }
 
     @Transactional(readOnly = true)
-    public Page<MainItemDTO> getMainItemPage(BoardSearchDTO boardSearchDto, Pageable pageable){
+    public Page<MainImageDTO> getMainImagePage(BoardSearchDTO boardSearchDto, Pageable pageable){
         return boardRepository.getMainItemPage(boardSearchDto, pageable);
     }
     @Transactional

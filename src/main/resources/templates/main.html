@@ -15,7 +15,7 @@
             <!-- Blog entries-->
             <div class="row-cols-md-5" style="display: flex; flex-direction: row; flex-wrap: wrap; width:95%; min-width: 500px; margin: 30px">
                 <!-- Featured blog post-->
-                <th:block th:each="board, status: ${items.getContent()}">
+                <th:block th:each="board, status: ${images.getContent()}">
                     <div class="card mb-5" style="margin: 20px">
                         <a th:href="'/board/detail/' +${board.id}" class="text-dark">
                             <img th:src="${board.imgUrl}" class="card-img-top" th:alt="${board.title}">
@@ -26,7 +26,7 @@
                         </a>
                     </div>
                 </th:block>
-                <th:block th:if="${items.getContent().isEmpty()}">
+                <th:block th:if="${images.getContent().isEmpty()}">
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                         <div class="card-body">
@@ -46,16 +46,16 @@
         <!-- Pagination-->
         <nav aria-label="Pagination" style="margin-left: 130px">
 
-            <div th:with="start=${(items.number/maxPage)*maxPage + 1}, end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})" >
+            <div th:with="start=${(images.number/maxPage)*maxPage + 1}, end=(${(images.totalPages == 0) ? 1 : (start + (maxPage - 1) < images.totalPages ? start + (maxPage - 1) : images.totalPages)})" >
                 <ul class="pagination justify-content-center my-4">
-                    <li class="page-item" th:classappend="${items.number eq 0}?'disabled':''">
-                        <a th:href="@{'/' + '?searchQuery=' + ${boardSearchDTO.searchQuery} + '&page=' + ${items.number-1}}" aria-label='Previous' class="page-link">이전</a>
+                    <li class="page-item" th:classappend="${images.number eq 0}?'disabled':''">
+                        <a th:href="@{'/' + '?searchQuery=' + ${boardSearchDTO.searchQuery} + '&page=' + ${images.number-1}}" aria-label='Previous' class="page-link">이전</a>
                     </li>
-                    <li class="page-item" aria-current="page" th:each="page: ${#numbers.sequence(start, end)}" th:classappend="${items.number eq page-1}?'active':''">
+                    <li class="page-item" aria-current="page" th:each="page: ${#numbers.sequence(start, end)}" th:classappend="${images.number eq page-1}?'active':''">
                         <a class="page-link" th:href="@{'/' +'?searchQuery=' + ${boardSearchDTO.searchQuery} + '&page=' + ${page-1}}" th:inline="text">[[${page}]]</a>
                     </li>
-                    <li class="page-item" th:classappend="${items.number+1 ge items.totalPages}?'disabled':''">
-                        <a class="page-link" th:href="@{'/' +'?searchQuery=' + ${boardSearchDTO.searchQuery} + '&page=' + ${items.number+1}}" aria-label='Next'>다음</a>
+                    <li class="page-item" th:classappend="${images.number+1 ge images.totalPages}?'disabled':''">
+                        <a class="page-link" th:href="@{'/' +'?searchQuery=' + ${boardSearchDTO.searchQuery} + '&page=' + ${images.number+1}}" aria-label='Next'>다음</a>
                     </li>
                 </ul>
             </div>

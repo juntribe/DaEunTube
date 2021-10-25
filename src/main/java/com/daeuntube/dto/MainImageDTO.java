@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class MainItemDTO {
+public class MainImageDTO {
 
     private Long id;
 
@@ -17,7 +17,7 @@ public class MainItemDTO {
 
 
     @QueryProjection
-    public MainItemDTO(Long id, String title, String content, String imgUrl) {
+    public MainImageDTO(Long id, String title, String content, String imgUrl) {
         this.id = id;
         this.title = title;
         this.content = content;

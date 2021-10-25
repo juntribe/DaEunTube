@@ -63,7 +63,7 @@ public class BoardController {
     public String modifyDtl(@PathVariable("boardId") Long boardId, Model model,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
 
         try {
-            BoardFormDTO boardFormDTO = boardService.getItemDtl(boardId);
+            BoardFormDTO boardFormDTO = boardService.getImageDtl(boardId);
             model.addAttribute("boardFormDTO", boardFormDTO);
             model.addAttribute("member", loginMember);
         } catch(EntityNotFoundException e){
@@ -115,7 +115,7 @@ public class BoardController {
 
     @GetMapping(value = "/board/detail/{boardId}")
     public String boardDtl(Model model, @PathVariable("boardId") Long boardId,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
-        BoardFormDTO boardFormDTO = boardService.getItemDtl(boardId);
+        BoardFormDTO boardFormDTO = boardService.getImageDtl(boardId);
         model.addAttribute("board", boardFormDTO);
         model.addAttribute("member", loginMember);
         return "board/boardDetail";

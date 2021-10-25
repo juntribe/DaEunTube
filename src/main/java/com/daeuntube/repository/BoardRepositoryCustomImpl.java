@@ -2,8 +2,8 @@ package com.daeuntube.repository;
 
 
 import com.daeuntube.dto.BoardSearchDTO;
-import com.daeuntube.dto.MainItemDTO;
-import com.daeuntube.dto.QMainItemDTO;
+import com.daeuntube.dto.MainImageDTO;
+import com.daeuntube.dto.QMainImageDTO;
 import com.daeuntube.entity.Board;
 import com.daeuntube.entity.QBoard;
 import com.daeuntube.entity.QBoardFile;
@@ -62,13 +62,13 @@ public class BoardRepositoryCustomImpl implements BoardRepositoryCustom {
     }
 
     @Override
-    public Page<MainItemDTO> getMainItemPage(BoardSearchDTO boardSearchDto, Pageable pageable) {
+    public Page<MainImageDTO> getMainItemPage(BoardSearchDTO boardSearchDto, Pageable pageable) {
         QBoard board = QBoard.board;
         QBoardFile boardFile = QBoardFile.boardFile;
 
-        QueryResults<MainItemDTO> results = queryFactory
+        QueryResults<MainImageDTO> results = queryFactory
                 .select(
-                        new QMainItemDTO(
+                        new QMainImageDTO(
                                 board.id,
                                 board.title,
                                 board.content,
@@ -84,7 +84,7 @@ public class BoardRepositoryCustomImpl implements BoardRepositoryCustom {
                 .limit(pageable.getPageSize())
                 .fetchResults();
 
-        List<MainItemDTO> content = results.getResults();
+        List<MainImageDTO> content = results.getResults();
         long total = results.getTotal();
         return new PageImpl<>(content, pageable, total);
     }
