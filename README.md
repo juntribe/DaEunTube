@@ -56,8 +56,9 @@
 
  <hr/>
  ## 댓글 등록&삭제
+<img src="https://user-images.githubusercontent.com/63856867/138637875-59e64f1c-98b7-4692-9e6f-7a8d9ca2c8c1.gif" width="900">
  
- Controller[코드 바로가기](https://user-images.githubusercontent.com/63856867/138637875-59e64f1c-98b7-4692-9e6f-7a8d9ca2c8c1.gif)
+ Controller[코드 바로가기]
 
 
 </div>
