@@ -50,7 +50,7 @@
  
  Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/43fe6e1082e5e09163c6f26e7a475b16f0f07a29/src/main/java/com/daeuntube/service/BoardService.java#L27)
 
- BoardFileService[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/service/BoardFileService.java#L26) 
+ BoardFileService[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/4f382250cc60b348845de4b0d2ed321bcce2104f/src/main/java/com/daeuntube/service/BoardFileService.java#L26) 
 
  FileService[코드 바로가기]( https://github.com/juntribe/DaEunTube/blob/ab660de29d6e531e6133559113e789d449200ef5/src/main/java/com/daeuntube/service/FileService.java#L14)
 
