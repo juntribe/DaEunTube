@@ -39,7 +39,7 @@ public class BoardFileService {
             imgUrl = itemImgLocation+"/" + imgName;
         }
 
-        //상품 이미지 정보 저장
+        //이미지 정보 저장
         boardFile.updateItemImg(oriImgName, imgName, imgUrl);
         boardFileRepository.save(boardFile);
     }

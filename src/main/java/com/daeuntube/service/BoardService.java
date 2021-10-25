@@ -34,7 +34,7 @@ public class BoardService {
 
     public void saveBoard(BoardFormDTO boardFormDto, List<MultipartFile> itemImgFileList) throws Exception{
 
-        //상품 등록
+        //등록
         Board board = boardFormDto.createBoard();
         boardRepository.save(board);
 
@@ -70,7 +70,7 @@ public class BoardService {
     }
 
     public void updateBoard(BoardFormDTO boardFormDto, List<MultipartFile> itemImgFileList) throws Exception{
-        //상품 수정
+        //게시판 수정
         Board board = boardRepository.findById(boardFormDto.getId())
                 .orElseThrow(EntityNotFoundException::new);
         board.updateBoard(boardFormDto);
