@@ -30,14 +30,14 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping(value = "/board/new")
-    public String itemForm(Model model, @SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
+    public String boardForm(Model model, @SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
         model.addAttribute("boardFormDTO", new BoardFormDTO());
         model.addAttribute("member", loginMember);
         return "board/boardForm";
     }
 
     @PostMapping(value = "/board/new")
-    public String itemNew(@Valid BoardFormDTO boardFormDTO, BindingResult bindingResult,
+    public String boardNew(@Valid BoardFormDTO boardFormDTO, BindingResult bindingResult,
                           Model model, @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList){
 
         if(bindingResult.hasErrors()){
@@ -60,14 +60,14 @@ public class BoardController {
     }
 
     @GetMapping(value = "/board/update/{boardId}")
-    public String itemDtl(@PathVariable("boardId") Long boardId, Model model,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
+    public String modifyDtl(@PathVariable("boardId") Long boardId, Model model,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
 
         try {
             BoardFormDTO boardFormDTO = boardService.getItemDtl(boardId);
             model.addAttribute("boardFormDTO", boardFormDTO);
             model.addAttribute("member", loginMember);
         } catch(EntityNotFoundException e){
-            model.addAttribute("errorMessage", "존재하지 않는 상품 입니다.");
+            model.addAttribute("errorMessage", "존재하지 않는 영상 입니다.");
             model.addAttribute("boardFormDTO", new BoardFormDTO());
             return "board/boardForm";
         }
@@ -76,21 +76,21 @@ public class BoardController {
     }
 
     @PostMapping(value = "/board/update/{boardId}")
-    public String itemUpdate(@Valid BoardFormDTO boardFormDTO, BindingResult bindingResult,
-                             @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model){
+    public String updateBoard(@Valid BoardFormDTO boardFormDTO, BindingResult bindingResult,
+                              @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model){
         if(bindingResult.hasErrors()){
             return "board/boardForm";
         }
 
         if(itemImgFileList.get(0).isEmpty() && boardFormDTO.getId() == null){
-            model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수 입력 값 입니다.");
+            model.addAttribute("errorMessage", "첫번째  이미지는 필수 입력 값 입니다.");
             return "board/boardForm";
         }
 
         try {
-            boardService.updateItem(boardFormDTO, itemImgFileList);
+            boardService.updateBoard(boardFormDTO, itemImgFileList);
         } catch (Exception e){
-            model.addAttribute("errorMessage", "상품 수정 중 에러가 발생하였습니다.");
+            model.addAttribute("errorMessage", "수정 중 에러가 발생하였습니다.");
             return "board/boardForm";
         }
 
@@ -98,15 +98,15 @@ public class BoardController {
     }
 
     @GetMapping(value = {"/board/list", "/board/list/{page}"})
-    public String itemManage(BoardSearchDTO boardSearchDTO,
+    public String boardManage(BoardSearchDTO boardSearchDTO,
                              @PathVariable("page") Optional<Integer> page,
                              Model model,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
 
         Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 10);
-        Page<Board> items = boardService.getBoardListPage(boardSearchDTO, pageable);
+        Page<Board> boards = boardService.getBoardListPage(boardSearchDTO, pageable);
 
-        model.addAttribute("items", items);
-        model.addAttribute("itemSearchDto", boardSearchDTO);
+        model.addAttribute("boards", boards);
+        model.addAttribute("boardSearchDTO", boardSearchDTO);
         model.addAttribute("maxPage", 10);
         model.addAttribute("member", loginMember);
 
@@ -114,9 +114,9 @@ public class BoardController {
     }
 
     @GetMapping(value = "/board/detail/{boardId}")
-    public String itemDtl(Model model, @PathVariable("boardId") Long boardId,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
+    public String boardDtl(Model model, @PathVariable("boardId") Long boardId,@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) Member loginMember){
         BoardFormDTO boardFormDTO = boardService.getItemDtl(boardId);
-        model.addAttribute("item", boardFormDTO);
+        model.addAttribute("board", boardFormDTO);
         model.addAttribute("member", loginMember);
         return "board/boardDetail";
     }

@@ -10,7 +10,7 @@
         $(document).ready(function () {
 
             var modal = $('.modal');
-            var id = [[${item.id}]];
+            var id = [[${board.id}]];
 
             var listGroup = $(".replyList");
             $(".replySave").hide(); //모달 내의 모든 버튼을 안 보이도록
@@ -136,7 +136,7 @@
 
 
 <div layout:fragment="content">
-    <input type="hidden" id="boardId" th:value="${item.id}">
+    <input type="hidden" id="boardId" th:value="${board.id}">
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-8">
@@ -145,18 +145,18 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">[[${item.title}]]</h1>
+                        <h1 class="fw-bolder mb-1">[[${board.title}]]</h1>
                         <!-- Post meta content-->
                         <!-- Post categories-->
                     </header>
                     <!-- Preview image figure-->
-                    <th:block th:if="${item.boardFileDTOList[1].imgUrl != '' }">
+                    <th:block th:if="${board.boardFileDTOList[1].imgUrl != '' }">
 
-                    <figure class="mb-4"> <video controls autoplay muted th:src="${item.boardFileDTOList[1].imgUrl}" width="900px" height="500px"/></figure>
+                    <figure class="mb-4"> <video controls autoplay muted th:src="${board.boardFileDTOList[1].imgUrl}" width="900px" height="500px"/></figure>
                     </th:block>
                     <!-- Post content-->
                     <section class="mb-5">
-                        <p class="fs-5 mb-4">[[${item.content}]] </p>
+                        <p class="fs-5 mb-4">[[${board.content}]] </p>
                     </section>
                 </article>
                 <div class="modal" tabindex="-1" role="dialog">
