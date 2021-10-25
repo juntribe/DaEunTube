@@ -26,18 +26,39 @@
 <div markdown="1">
 
  ## 실행화면
-<img src="https://user-images.githubusercontent.com/63856867/138623531-f270921e-8a13-4d8d-9b3a-a5bbec9e6d81.gif" width="700">
-<img src="https://user-images.githubusercontent.com/63856867/138623542-426ac027-6064-4d66-a5f6-806f11db1a21.gif" width="700">
+<img src="https://user-images.githubusercontent.com/63856867/138623531-f270921e-8a13-4d8d-9b3a-a5bbec9e6d81.gif" width="900">
+<img src="https://user-images.githubusercontent.com/63856867/138623542-426ac027-6064-4d66-a5f6-806f11db1a21.gif" width="900">
  <hr/>
  
  ## 회원가입 & 로그인
-<img src="https://user-images.githubusercontent.com/63856867/138631715-bdaeecef-7df6-43ae-8fc0-80d7e00c283e.png" width="700">
-<img src="https://user-images.githubusercontent.com/63856867/138631718-468862bc-e5ee-4a4d-a72f-00744a76f940.png" width="700">
-<img src="https://user-images.githubusercontent.com/63856867/138634966-e2896186-44c4-4fa1-900a-2bc9f9cd2c28.png" width="700">
 
+<img src="https://user-images.githubusercontent.com/63856867/138638206-17ca261e-a310-4eff-aa04-b60d35266b81.gif" width="900">
 
- [코드 바로가기](https://github.com/juntribe/DaEunTube/blob/a533eb605b86aa400a0ebc705180c43053109418/src/main/java/com/daeuntube/controller/MemberController.java#L41)
+ Controller[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/a533eb605b86aa400a0ebc705180c43053109418/src/main/java/com/daeuntube/controller/MemberController.java#L41)
 
+ 
+ Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/c957810d833bbed3137e83db2b9293c4fbf54b30/src/main/java/com/daeuntube/service/MemberServiceImpl.java#L18)
+ 
+ <hr/>
+ 
+ ## 게시판 CRUD
+ 
+<img src="https://user-images.githubusercontent.com/63856867/138637904-8a9a975b-174e-4816-b08f-4bacc3c5a54d.gif" width="900">
+<img src="https://user-images.githubusercontent.com/63856867/138637894-84dffe0a-ba16-4d74-bc18-47411c225500.gif" width="900">
+ 
+ Controller[코드 바로가기]( https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/controller/BoardController.java#L32)
+ 
+ Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/service/BoardService.java#L35)
+
+ BoardFileService[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/service/BoardFileService.java#L26) 
+
+ FileService[코드 바로가기]( https://github.com/juntribe/DaEunTube/blob/ab660de29d6e531e6133559113e789d449200ef5/src/main/java/com/daeuntube/service/FileService.java#L14)
+
+ 
+ 
 
 </div>
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/63856867/138637875-59e64f1c-98b7-4692-9e6f-7a8d9ca2c8c1.gif)
+
+ 
 </details>
