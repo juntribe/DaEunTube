@@ -34,10 +34,10 @@
 
 <img src="https://user-images.githubusercontent.com/63856867/138638206-17ca261e-a310-4eff-aa04-b60d35266b81.gif" width="900">
 
- Controller[코드 바로가기]
-  (https://github.com/juntribe/DaEunTube/blob/a533eb605b86aa400a0ebc705180c43053109418/src/main/java/com/daeuntube/controller/MemberController.java#L41)
- Service[코드 바로가기]
- (https://github.com/juntribe/DaEunTube/blob/c957810d833bbed3137e83db2b9293c4fbf54b30/src/main/java/com/daeuntube/service/MemberServiceImpl.java#L18)
+ Controller[코드 바로가기] (https://github.com/juntribe/DaEunTube/blob/a533eb605b86aa400a0ebc705180c43053109418/src/main/java/com/daeuntube/controller/MemberController.java#L41)
+ 
+ Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/c957810d833bbed3137e83db2b9293c4fbf54b30/src/main/java/com/daeuntube/service/MemberServiceImpl.java#L18)
+ 
  
 
 <img src="https://user-images.githubusercontent.com/63856867/138637904-8a9a975b-174e-4816-b08f-4bacc3c5a54d.gif" width="900">
