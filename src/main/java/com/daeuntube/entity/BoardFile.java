@@ -27,7 +27,7 @@ public class BoardFile extends BaseEntity {
     @JoinColumn(name = "board_id")
     private Board board;
 
-    public void updateItemImg(String oriImgName, String imgName, String imgUrl){
+    public void updateBoardImg(String oriImgName, String imgName, String imgUrl){
         this.oriImgName = oriImgName;
         this.imgName = imgName;
         this.imgUrl = imgUrl;

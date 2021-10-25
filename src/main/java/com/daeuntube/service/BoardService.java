@@ -48,7 +48,7 @@ public class BoardService {
             else
                 boardFile.setRepimgYn("N");
 
-            boardFileService.saveItemImg(boardFile, boardImgFileList.get(i));
+            boardFileService.saveBoardImg(boardFile, boardImgFileList.get(i));
         }
 
     }
@@ -74,11 +74,11 @@ public class BoardService {
         Board board = boardRepository.findById(boardFormDto.getId())
                 .orElseThrow(EntityNotFoundException::new);
         board.updateBoard(boardFormDto);
-        List<Long> itemImgIds = boardFormDto.getBoardFileIds();
+        List<Long> boardImgIds = boardFormDto.getBoardFileIds();
 
         //이미지 등록
         for(int i=0;i<boardImgFileList.size();i++){
-            boardFileService.updateItemImg(itemImgIds.get(i),
+            boardFileService.updateBoardImg(boardImgIds.get(i),
                     boardImgFileList.get(i));
         }
 

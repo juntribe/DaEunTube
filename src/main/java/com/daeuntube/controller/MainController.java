@@ -24,7 +24,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MainController {
 
-    @Value("${itemImgLocation}")
+    @Value("${imgLocation}")
     private String uploadPath;
 
     private final BoardService boardService;

@@ -11,7 +11,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Value("${uploadPath}")
     String uploadPath;
 
-    @Value("${itemImgLocation}")
+    @Value("${imgLocation}")
     String imgPath;
 
     @Override
