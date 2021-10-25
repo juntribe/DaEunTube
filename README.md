@@ -58,7 +58,9 @@
  ## 댓글 등록&삭제
 <img src="https://user-images.githubusercontent.com/63856867/138637875-59e64f1c-98b7-4692-9e6f-7a8d9ca2c8c1.gif" width="900">
  
- Controller[코드 바로가기]
+ Controller[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/e65ecd145b17026069ea4241f4203ea1b14641c1/src/main/java/com/daeuntube/controller/ReplyController.java#L22)
+
+ Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/e65ecd145b17026069ea4241f4203ea1b14641c1/src/main/java/com/daeuntube/service/ReplyServiceImpl.java#L22)
 
 
 </div>
