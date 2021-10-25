@@ -47,12 +47,10 @@
 <img src="https://user-images.githubusercontent.com/63856867/138637894-84dffe0a-ba16-4d74-bc18-47411c225500.gif" width="900">
  
  Controller[코드 바로가기]( https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/controller/BoardController.java#L32)
-
- 
  
  Service[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/service/BoardService.java#L35)
 
- BoardFileService[코드 바로가기] (https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/service/BoardFileService.java#L26)
+ BoardFileService[코드 바로가기](https://github.com/juntribe/DaEunTube/blob/ab444b9e4bdad465b3e8b3608a6286bf906f045c/src/main/java/com/daeuntube/service/BoardFileService.java#L26) 
 
  FileService[코드 바로가기]( https://github.com/juntribe/DaEunTube/blob/ab660de29d6e531e6133559113e789d449200ef5/src/main/java/com/daeuntube/service/FileService.java#L14)
 
