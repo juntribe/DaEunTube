@@ -27,15 +27,15 @@ public class BoardFileService {
 
     private final FileService fileService;
 
-    public void saveItemImg(BoardFile boardFile, MultipartFile itemImgFile) throws Exception{
-        String oriImgName = itemImgFile.getOriginalFilename();
+    public void saveItemImg(BoardFile boardFile, MultipartFile boardImgFile) throws Exception{
+        String oriImgName = boardImgFile.getOriginalFilename();
         String imgName = "";
         String imgUrl = "";
 
         //파일 업로드
         if(!StringUtils.isEmpty(oriImgName)){
             imgName = fileService.uploadFile(itemImgLocation, oriImgName,
-                    itemImgFile.getBytes());
+                    boardImgFile.getBytes());
             imgUrl = itemImgLocation+"/" + imgName;
         }
 
@@ -44,8 +44,8 @@ public class BoardFileService {
         boardFileRepository.save(boardFile);
     }
 
-    public void updateItemImg(Long id, MultipartFile itemImgFile) throws Exception{
-        if(!itemImgFile.isEmpty()){
+    public void updateItemImg(Long id, MultipartFile boardImgFile) throws Exception{
+        if(!boardImgFile.isEmpty()){
             BoardFile savedBoardFile = boardFileRepository.findById(id)
                     .orElseThrow(EntityNotFoundException::new);
 
@@ -55,8 +55,8 @@ public class BoardFileService {
                         savedBoardFile.getImgName());
             }
 
-            String oriImgName = itemImgFile.getOriginalFilename();
-            String imgName = fileService.uploadFile(itemImgLocation, oriImgName, itemImgFile.getBytes());
+            String oriImgName = boardImgFile.getOriginalFilename();
+            String imgName = fileService.uploadFile(itemImgLocation, oriImgName, boardImgFile.getBytes());
             String imgUrl = itemImgLocation+"/" + imgName;
             savedBoardFile.updateItemImg(oriImgName, imgName, imgUrl);
         }

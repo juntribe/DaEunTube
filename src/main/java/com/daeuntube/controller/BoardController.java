@@ -38,19 +38,19 @@ public class BoardController {
 
     @PostMapping(value = "/board/new")
     public String boardNew(@Valid BoardFormDTO boardFormDTO, BindingResult bindingResult,
-                          Model model, @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList){
+                          Model model, @RequestParam("boardImgFile") List<MultipartFile> boardImgFileList){
 
         if(bindingResult.hasErrors()){
             return "board/boardForm";
         }
 
-        if(itemImgFileList.get(0).isEmpty() && boardFormDTO.getId() == null){
+        if(boardImgFileList.get(0).isEmpty() && boardFormDTO.getId() == null){
             model.addAttribute("errorMessage", "첫번째 이미지는 필수 입력 값 입니다.");
             return "board/boardForm";
         }
 
         try {
-            boardService.saveBoard(boardFormDTO, itemImgFileList);
+            boardService.saveBoard(boardFormDTO, boardImgFileList);
         } catch (Exception e){
             model.addAttribute("errorMessage", "등록 중 에러가 발생하였습니다.");
             return "board/boardForm";
@@ -77,18 +77,18 @@ public class BoardController {
 
     @PostMapping(value = "/board/update/{boardId}")
     public String updateBoard(@Valid BoardFormDTO boardFormDTO, BindingResult bindingResult,
-                              @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model){
+                              @RequestParam("boardImgFile") List<MultipartFile> boardImgFileList, Model model){
         if(bindingResult.hasErrors()){
             return "board/boardForm";
         }
 
-        if(itemImgFileList.get(0).isEmpty() && boardFormDTO.getId() == null){
+        if(boardImgFileList.get(0).isEmpty() && boardFormDTO.getId() == null){
             model.addAttribute("errorMessage", "첫번째  이미지는 필수 입력 값 입니다.");
             return "board/boardForm";
         }
 
         try {
-            boardService.updateBoard(boardFormDTO, itemImgFileList);
+            boardService.updateBoard(boardFormDTO, boardImgFileList);
         } catch (Exception e){
             model.addAttribute("errorMessage", "수정 중 에러가 발생하였습니다.");
             return "board/boardForm";

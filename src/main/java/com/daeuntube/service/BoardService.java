@@ -32,14 +32,14 @@ public class BoardService {
 
     private final BoardFileRepository boardFileRepository;
 
-    public void saveBoard(BoardFormDTO boardFormDto, List<MultipartFile> itemImgFileList) throws Exception{
+    public void saveBoard(BoardFormDTO boardFormDto, List<MultipartFile> boardImgFileList) throws Exception{
 
         //등록
         Board board = boardFormDto.createBoard();
         boardRepository.save(board);
 
         //이미지 등록
-        for(int i=0;i<itemImgFileList.size();i++){
+        for(int i=0;i<boardImgFileList.size();i++){
             BoardFile boardFile = new BoardFile();
             boardFile.setBoard(board);
 
@@ -48,7 +48,7 @@ public class BoardService {
             else
                 boardFile.setRepimgYn("N");
 
-            boardFileService.saveItemImg(boardFile, itemImgFileList.get(i));
+            boardFileService.saveItemImg(boardFile, boardImgFileList.get(i));
         }
 
     }
@@ -69,7 +69,7 @@ public class BoardService {
         return boardFormDTO;
     }
 
-    public void updateBoard(BoardFormDTO boardFormDto, List<MultipartFile> itemImgFileList) throws Exception{
+    public void updateBoard(BoardFormDTO boardFormDto, List<MultipartFile> boardImgFileList) throws Exception{
         //게시판 수정
         Board board = boardRepository.findById(boardFormDto.getId())
                 .orElseThrow(EntityNotFoundException::new);
@@ -77,9 +77,9 @@ public class BoardService {
         List<Long> itemImgIds = boardFormDto.getBoardFileIds();
 
         //이미지 등록
-        for(int i=0;i<itemImgFileList.size();i++){
+        for(int i=0;i<boardImgFileList.size();i++){
             boardFileService.updateItemImg(itemImgIds.get(i),
-                    itemImgFileList.get(i));
+                    boardImgFileList.get(i));
         }
 
     }

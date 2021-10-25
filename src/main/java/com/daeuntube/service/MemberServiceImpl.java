@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService {
         validateDuplicateMember(member);
         memberRepository.save(member);
     }
+    // Id 중복 체크
     private void validateDuplicateMember(Member member){
         memberRepository.findByLoginId(member.getLoginId())
                 .ifPresent(m ->{
@@ -28,6 +29,7 @@ public class MemberServiceImpl implements MemberService {
                 });
     }
 
+    // Id,pwd 유효성 체크
     @Override
     public Member LoginUser(String loginId, String password) {
         return memberRepository.findByLoginId(loginId).filter(m->
