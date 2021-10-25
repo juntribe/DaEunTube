@@ -13,7 +13,6 @@ public interface ReplyService {
 
     List<ReplyDTO> getList(Long bno); // 특정 게시물의 댓글 목록
 
-    void modify(ReplyDTO replyDTO); // 댓글 수정
 
     void remove(Long rno); // 댓글 삭제
 
