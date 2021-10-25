@@ -34,8 +34,6 @@ public class BoardRepositoryCustomImpl implements BoardRepositoryCustom {
 
         if(StringUtils.equals("title", searchBy)){
             return QBoard.board.title.like("%" + searchQuery + "%");
-        } else if(StringUtils.equals("createdBy", searchBy)){
-            return QBoard.board.createdBy.like("%" + searchQuery + "%");
         }
 
         return null;

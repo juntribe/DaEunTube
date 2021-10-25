@@ -29,7 +29,7 @@ public class BoardFormDTO {
 
     private static ModelMapper modelMapper = new ModelMapper();
 
-    public Board createItem(){
+    public Board createBoard(){
         return modelMapper.map(this, Board.class);
     }
 

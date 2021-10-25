@@ -8,17 +8,18 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import java.time.LocalDate;
 
 @EntityListeners(value = {AuditingEntityListener.class})
 @MappedSuperclass
 @Getter
-public abstract class BaseEntity extends BaseTimeEntity {
+public abstract class BaseEntity{
 
     @CreatedBy
     @Column(updatable = false)
-    private String createdBy;
+    private LocalDate createdBy;
 
     @LastModifiedBy
-    private String modifiedBy;
+    private LocalDate  modifiedBy;
 
 }

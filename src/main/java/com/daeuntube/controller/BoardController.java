@@ -50,7 +50,7 @@ public class BoardController {
         }
 
         try {
-            boardService.saveItem(boardFormDTO, itemImgFileList);
+            boardService.saveBoard(boardFormDTO, itemImgFileList);
         } catch (Exception e){
             model.addAttribute("errorMessage", "등록 중 에러가 발생하였습니다.");
             return "board/boardForm";

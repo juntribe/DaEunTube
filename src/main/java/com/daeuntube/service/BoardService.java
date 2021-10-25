@@ -32,10 +32,10 @@ public class BoardService {
 
     private final BoardFileRepository boardFileRepository;
 
-    public void saveItem(BoardFormDTO boardFormDto, List<MultipartFile> itemImgFileList) throws Exception{
+    public void saveBoard(BoardFormDTO boardFormDto, List<MultipartFile> itemImgFileList) throws Exception{
 
         //상품 등록
-        Board board = boardFormDto.createItem();
+        Board board = boardFormDto.createBoard();
         boardRepository.save(board);
 
         //이미지 등록
@@ -73,7 +73,7 @@ public class BoardService {
         //상품 수정
         Board board = boardRepository.findById(boardFormDto.getId())
                 .orElseThrow(EntityNotFoundException::new);
-        board.updateItem(boardFormDto);
+        board.updateBoard(boardFormDto);
         List<Long> itemImgIds = boardFormDto.getBoardFileIds();
 
         //이미지 등록
